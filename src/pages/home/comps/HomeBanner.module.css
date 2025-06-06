@@ -1,0 +1,25 @@
+.banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-h {
+    height: 50vh;
+}
+
+.position {
+    background-position: 70% 50%;
+}
+
+.absolute-center{
+    position: absolute;
+    transform: translate(0,-50%);
+    top: 50%;
+    left: 5%;
+}
+
+@media (min-width: 1024px) {
+    .position {
+        background-position: 10%;
+    }
+}

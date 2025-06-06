@@ -1,0 +1,21 @@
+.authen-form {
+    // display: flex;
+    // flex-direction: column;
+
+    input:last-of-type {
+        border-bottom: solid rgb(113 113 122) 1px;
+    }
+
+    input {
+        display: block;
+        background: transparent;
+        border-top: solid rgb(113 113 122) 1px;
+        border-right: solid rgb(113 113 122) 1px;
+        border-left: solid rgb(113 113 122) 1px;
+        padding: 1.5rem 2rem;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 35rem;
+    }
+}

@@ -1,0 +1,22 @@
+.cart-layout {
+    display: grid;
+    gap: 1.25rem;
+
+    @media (min-width:1024px) {
+        grid-template-areas:
+            "   cart    cart    cart    cart    cart    cart    total   total   total   "
+            "   rest    rest    rest    rest    rest    rest    _       _       _       ";
+
+        .cart {
+            grid-area: cart;
+        }
+
+        .total {
+            grid-area: total;
+        }
+
+        .rest {
+            grid-area: rest;
+        }
+    }
+}
