@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect } from "react";
+import { type PropsWithChildren, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { setHideClass as fadingHide } from "../../store/modalSlice";

@@ -5,7 +5,6 @@ import classes from './CategoriesBrowser.module.css'
 
 
 function CategoriesBrowser() {
-    0
     /**
      * In this `categoriesCollections` Array:
      * ---- [0]: category url

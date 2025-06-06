@@ -1,5 +1,5 @@
 
-export enum PageUrlsList {
+export enum ClientRoutes {
     Home = '/',
     Shop = '/shop',
     Detail = '/detail',

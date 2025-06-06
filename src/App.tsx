@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './pages/Root'
 import Error from './pages/Error'
 import Home from './pages/home'
-import { PageUrlsList } from './ultil/clientRoutes'
+import { ClientRoutes } from './ultil/clientRoutes'
 import { Fallback } from './components/layout/Fallback'
 //routes
 import shopRoute from './routes/shopRoute'
@@ -30,14 +30,14 @@ const router = createBrowserRouter([
       shopRoute,
       cartRoute,
       {
-        path: `${PageUrlsList.Detail}/:productId`,
+        path: `${ClientRoutes.Detail}/:productId`,
         element: <Suspense fallback={<Fallback />}>
           <Detail />
         </Suspense>,
         loader: (args) => import('./pages/detail').then(i => i.loader(args))
       },
       {
-        path: PageUrlsList.Login,
+        path: ClientRoutes.Login,
         element: <Suspense fallback={<Fallback />}>
           <Login />
         </Suspense>,
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         action: (args) => import('./pages/authentication/Login/action').then(i => i.action(args))
       },
       {
-        path: PageUrlsList.Signup,
+        path: ClientRoutes.Signup,
         element: <Suspense fallback={<Fallback />}>
           <Signup />
         </Suspense>,
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         action: (args) => import('./pages/authentication/Signup/action').then(i => i.action(args))
       },
       {
-        path: PageUrlsList.Logout,
+        path: ClientRoutes.Logout,
         action: () => import('./pages/authentication/Logout').then(i => i.action())
       },
     ]

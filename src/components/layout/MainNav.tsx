@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { setLogoState } from "../../store/logoSlice";
 import store from "../../store";
 import { getJwt, getUserInfor } from "../../ultil/storageUltil/authenTokenUltil";
-import { PageUrlsList } from "../../ultil/clientRoutes";
+import { ClientRoutes } from "../../ultil/clientRoutes";
 
 // css
 import classes from "./MainNav.module.css";
@@ -23,13 +23,13 @@ function NavLeftUl() {
     return (
         <ul className="flex gap-4">
             <li>
-                <NavLink to={PageUrlsList.Home} className={navLinkStateClass}>
+                <NavLink to={ClientRoutes.Home} className={navLinkStateClass}>
                     <FontAwesomeIcon icon={faHouse} className="mr-1" />
                     <span>Home</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink to={PageUrlsList.Shop} className={navLinkStateClass}>
+                <NavLink to={ClientRoutes.Shop} className={navLinkStateClass}>
                     <FontAwesomeIcon icon={faShop} className="mr-1" />
                     <span>Shop</span>
                 </NavLink>
@@ -50,25 +50,25 @@ function NavRightUl() {
     const submit = useFetcher().submit
 
     const logout = useCallback(function logout() {
-        submit(null, { action: PageUrlsList.Logout, method: 'POST' })
+        submit(null, { action: ClientRoutes.Logout, method: 'POST' })
     }, [])
 
     return (
         <ul className="flex gap-6 w-full justify-end md:w-auto">
             <li>
-                <NavLink to={PageUrlsList.Cart} className={navLinkStateClass}>
+                <NavLink to={ClientRoutes.Cart} className={navLinkStateClass}>
                     <FontAwesomeIcon icon={faCartShopping} className="mr-1" />
                     <span className="hidden md:inline">Cart</span>
                 </NavLink>
             </li>
             {!isLogin && <li>
-                <NavLink to={PageUrlsList.Login} className={navLinkStateClass}>
+                <NavLink to={ClientRoutes.Login} className={navLinkStateClass}>
                     <FontAwesomeIcon icon={faUser} className="mr-1" />
                     <span className="hidden md:inline">Sign in</span>
                 </NavLink>
             </li>}
             {isLogin && <li>
-                <NavLink to={PageUrlsList.Login} className={navLinkStateClass}>
+                <NavLink to={ClientRoutes.Login} className={navLinkStateClass}>
                     <FontAwesomeIcon icon={faUser} className="mr-1" />
                     <span className="hidden md:inline capitalize">{userName}</span>
                 </NavLink>
@@ -118,7 +118,7 @@ export default function MainNav() {
                     </nav>
                 </Container>
                 <div className={`${classes['logo-container']} ${classes[logoState]} ${classes['logo-align']} relative z-50`}>
-                    <Link to={PageUrlsList.Home} >
+                    <Link to={ClientRoutes.Home} >
                         {/* <Logo color={color} /> */}
                         <img src={Logo} alt="Boutique logo" />
                     </Link>
